@@ -12,3 +12,12 @@ output "compute_zones" {
   value       = join(", ", data.google_compute_zones.available.names)
 }
 
+
+
+output "instance_external_ips" {
+  value = {
+    vm1 = "http://${google_compute_instance.sample-vm.network_interface[0].access_config[0].nat_ip}"
+
+  }
+  description = "External IPs of both VMs"
+}

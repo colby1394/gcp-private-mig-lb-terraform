@@ -1,8 +1,8 @@
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs
 provider "google" {
-  project     = "temp-project-453919"
+  project     = "starfleetgcp"
   region      = "us-central1"
-  credentials = "key.json"
+  credentials = "starfleetgcp.json"
 }
 
 # I'm doing this tonight while prepping my students for their sessions with Lizzo
