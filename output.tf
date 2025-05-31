@@ -1,8 +1,24 @@
 # https://developer.hashicorp.com/terraform/language/values/outputs
 
-output "mylb_static_ip_address" {
+output "instance_external_ip" {
+  value       = "http://${google_compute_instance.sample-vm.network_interface[0].access_config[0].nat_ip}"
+  description = "The external IP address of the GCE instance."
+}
+
+output "instance_external_ips" {
+  value = {
+    vm1 = "http://${google_compute_instance.sample-vm.network_interface[0].access_config[0].nat_ip}"
+    vm2 = "http://${google_compute_instance.sample-vm.network_interface[0].access_config[0].nat_ip}"
+  }
+  description = "External IPs of both VMs"
+}
+
+
+
+
+output "lb_static_ip_address" {
   description = "The static IP address of the load balancer."
-  value       = google_compute_address.lb.address
+  value       = "http://${google_compute_address.lb.address}"
 }
 
 # https://developer.hashicorp.com/terraform/language/functions/join
