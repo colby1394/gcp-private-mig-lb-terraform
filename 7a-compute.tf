@@ -1,14 +1,22 @@
-# resource "google_compute_instance" "sample-vm" {
-#   name         = "public-iowa-lizzo-loves-me"
-#   machine_type = "e2-medium"
-#   zone         = "us-central1-a"
+resource "google_compute_instance" "sample-vm" {
+  name         = "public-iowa-lizzo-loves-me"
+  machine_type = "e2-medium"
+  zone         = "us-central1-a"
 
-
+<<<<<<< HEAD
   boot_disk {
     initialize_params {
       image = "debian-cloud/debian-12"
     }
   }
+=======
+
+#   boot_disk {
+#     initialize_params {
+#       image = "debian-cloud/debian-12"
+#     }
+#   }
+>>>>>>> a2dfe95745abfda69ba273ef4231344a0ba6ceb5
 
   network_interface {
     subnetwork = google_compute_subnetwork.hqinternal.name
